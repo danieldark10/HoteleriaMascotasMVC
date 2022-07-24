@@ -23,9 +23,9 @@ namespace HoteleriaMascotas.Models.DB
         public virtual DbSet<Mascotum> Mascota { get; set; } = null!;
         public virtual DbSet<Pagoss> Pagosses { get; set; } = null!;
         public virtual DbSet<Persona> Personas { get; set; } = null!;
-        public virtual DbSet<Pregunta> Preguntas { get; set; } = null!;
+       
         public virtual DbSet<Reserva> Reservas { get; set; } = null!;
-        public virtual DbSet<Respuesta> Respuestas { get; set; } = null!;
+       
         public virtual DbSet<Rol> Rols { get; set; } = null!;
         public virtual DbSet<Solicitud> Solicituds { get; set; } = null!;
         public virtual DbSet<Status> Statuses { get; set; } = null!;
@@ -340,31 +340,7 @@ namespace HoteleriaMascotas.Models.DB
                 entity.Property(e => e.Telefono).HasColumnName("TELEFONO");
             });
 
-            modelBuilder.Entity<Pregunta>(entity =>
-            {
-                entity.HasKey(e => e.Idpregunta)
-                    .IsClustered(false);
-
-                entity.ToTable("PREGUNTAS");
-
-                entity.HasIndex(e => e.Idsolicitud, "TIENEPREGUNTAS_FK");
-
-                entity.Property(e => e.Idpregunta).HasColumnName("IDPREGUNTA");
-
-                entity.Property(e => e.Idsolicitud).HasColumnName("IDSOLICITUD");
-
-                entity.Property(e => e.Textopregunta)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("TEXTOPREGUNTA")
-                    .IsFixedLength();
-
-                entity.HasOne(d => d.IdsolicitudNavigation)
-                    .WithMany(p => p.Pregunta)
-                    .HasForeignKey(d => d.Idsolicitud)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_PREGUNTA_TIENEPREG_SOLICITU");
-            });
+          
 
             modelBuilder.Entity<Reserva>(entity =>
             {
@@ -426,31 +402,7 @@ namespace HoteleriaMascotas.Models.DB
                     .HasConstraintName("FK_RESERVA_TIENERESE_SOLICITU");
             });
 
-            modelBuilder.Entity<Respuesta>(entity =>
-            {
-                entity.HasKey(e => e.Idrespuesta)
-                    .IsClustered(false);
-
-                entity.ToTable("RESPUESTAS");
-
-                entity.HasIndex(e => e.Idpregunta, "TIENE_FK");
-
-                entity.Property(e => e.Idrespuesta).HasColumnName("IDRESPUESTA");
-
-                entity.Property(e => e.Idpregunta).HasColumnName("IDPREGUNTA");
-
-                entity.Property(e => e.Textorespuesta)
-                    .HasMaxLength(50)
-                    .IsUnicode(false)
-                    .HasColumnName("TEXTORESPUESTA")
-                    .IsFixedLength();
-
-                entity.HasOne(d => d.IdpreguntaNavigation)
-                    .WithMany(p => p.Respuesta)
-                    .HasForeignKey(d => d.Idpregunta)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_RESPUEST_TIENE_PREGUNTA");
-            });
+           
 
             modelBuilder.Entity<Rol>(entity =>
             {

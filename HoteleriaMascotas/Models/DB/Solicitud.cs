@@ -9,7 +9,7 @@ namespace HoteleriaMascotas.Models.DB
         {
             Administracionsolicituds = new HashSet<Administracionsolicitud>();
             Agendabanos = new HashSet<Agendabano>();
-            Pregunta = new HashSet<Pregunta>();
+            
             Reservas = new HashSet<Reserva>();
         }
 
@@ -24,7 +24,7 @@ namespace HoteleriaMascotas.Models.DB
         public virtual Tipodesolicitud IdtipodesolicitudNavigation { get; set; } = null!;
         public virtual ICollection<Administracionsolicitud> Administracionsolicituds { get; set; }
         public virtual ICollection<Agendabano> Agendabanos { get; set; }
-        public virtual ICollection<Pregunta> Pregunta { get; set; }
+        
         public virtual ICollection<Reserva> Reservas { get; set; }
     }
 }
