@@ -1,14 +1,17 @@
-﻿@*
+﻿@model HoteleriaMascotas.Models.MascotaM
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    
 }
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewBag.Title = "Index";
 }
- <head>
+<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -41,63 +44,42 @@
             </div>
         </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                         <br> <br>
-                        <legend class="text-center header">MASCOTA</legend>
-                        <legend class="text-left header">Ingresa una mascota</legend>
-                        
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="inombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="iedad" name="edad" type="number" placeholder="Edad" class="form-control">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="ichip" name="chip" type="number" placeholder="Chip" class="form-control">
-                            </div>
-                        </div>
+<br><br>
+<h2>@ViewBag.Title</h2>
 
-                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="iraza" name="raza" type="text" placeholder="Raza" class="form-control">
-                            </div>
-                        </div>
-                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="itipodeanimal" name="tipodeanimal" type="text" placeholder="TipoDeAnimal" class="form-control">
-                            </div>
-                        </div>
-                         <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="ipersonalidad" name="personalidad" type="text" placeholder="Personalidad" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12 text-center">
-                                <button type="Submit" class="btn btn-primary btn-lg">Siguente</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+@using (Html.BeginForm("Index","Mascota" ,FormMethod.Post))
+{
+    <div class = "row">
+         <div class="col-md-12">
+         
+             @Html.LabelFor(d => d.idCliente)
+             @Html.TextBoxFor(d => d.idCliente,"", new {@class = "form-control"})                               
+              
+             @Html.LabelFor(d => d.Nombre)
+             @Html.TextBoxFor(d => d.Nombre,"" , new {@class = "form-control"})
+             
+             @Html.LabelFor(d => d. Edad)
+             @Html.TextBoxFor(d => d.Edad, "", new {@class = "form-control"})
+            
+             @Html.LabelFor(d => d. Chip)
+             @Html.TextBoxFor(d => d.Chip, "", new {@class = "form-control"})
+              
+             @Html.LabelFor(d => d.Raza)
+             @Html.TextBoxFor(d => d.Raza, "", new {@class = "form-control"})
+            
+             @Html.LabelFor(d => d.TipoDeAnimal)
+             @Html.TextBoxFor(d => d.TipoDeAnimal, "", new {@class = "form-control"})
+            
+             @Html.LabelFor(d => d.Personalidad)
+             @Html.TextBoxFor(d => d.Personalidad, "", new {@class = "form-control"})
+          
+             <div style="text-align:right;">
+                  <input value="Guardar" class="btn btn-primary" type= "submit" />
+           </div>
+         
+         </div>
+          
     </div>
-</div>
+}
+
+
