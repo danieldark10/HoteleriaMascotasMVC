@@ -3,7 +3,8 @@
 *@
 @{
 }
-<head>
+
+ <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -35,7 +36,6 @@
                 </div>
             </div>
         </nav>
-       <br><br>
 
         <div class="container">
     <div class="row">
@@ -43,63 +43,52 @@
             <div class="well well-sm">
                 <form class="form-horizontal" method="post">
                     <fieldset>
-                        <legend class="text-center header">Registrar Reserva</legend>
+                        <legend class="text-center header">Registrar Habitacion</legend>
                         <br><br>
-                        <legend class="text-left header">Fechaentrada</legend>
+                        <legend class="text-left header">Tipo de Habitacion</legend>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="ffechaentrada" name="Date" type="date" placeholder="FechaEntrada" class="form-control">
+                                <input id="ftipodehabitacion" name="text" type="text" placeholder="TipoDeHabitacion" class="form-control">
                             </div>
                         </div>
                        <br><br>
-                        <legend class="text-left header">FechaSalida</legend>
+                        <legend class="text-left header">NumeroHabitacion</legend>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="fffechasalida" name="Date" type="date" placeholder="FechaSalida" class="form-control">
+                                <input id="fnumerohabitacion" name="Date" type="number" placeholder="NumeroHabitacion" class="form-control">
                             </div>
                         </div>
                        
-                        <legend class="text-left header">Horario Entrada</legend>
+                        <legend class="text-left header">PrecioHora</legend>
                          <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="horarioentrada" name="Datetime" type="datetime" placeholder="horarioentrada" class="form-control">
+                                <input id="fpreciohota" name="precio" type="number" placeholder="PrecioHora" class="form-control">
                             </div>
                         </div>
 
-                        <legend class="text-left header">Horario Salida</legend>
+                        <legend class="text-left header">Caractersticas</legend>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="horariosalida" name="Datetime" type="datetime" placeholder="horariosalida" class="form-control">
+                                <input id="fcaracteristicas" name="caracteristicas" type="text" placeholder="caracteristicas" class="form-control">
                             </div>
                         </div>
 
-                         <legend class="text-left header">FechaReserva</legend>
+                         <legend class="text-left header">Estado</legend>
                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="ffechareserva" name="Date" type="date" placeholder="FechaReserva" class="form-control">
-                            </div>
-                        </div>
-                       
-                      
-
-                        <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
                                 <input id="festado" name="estado" type="text" placeholder="Estado" class="form-control">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fprecio" name="precio" type="number" placeholder="Precio" class="form-control">
-                            </div>
-                        </div>
+                           <div style="text-align:right;">
+                  <input value="Guardar" class="btn btn-primary" type= "submit" />
+                           </div>
+                       
                     </fieldset>
                 </form>
             </div>
