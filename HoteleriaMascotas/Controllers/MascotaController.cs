@@ -5,13 +5,15 @@ namespace HoteleriaMascotas.Controllers
 {
     public class MascotaController : Controller
     {
-        
-        
+
+        [HttpPost]
         public ActionResult Index (MascotaM Models)
         {
+           
             try
             {
-             if (ModelState.IsValid)
+               
+                if (ModelState.IsValid)
                 {
                     using (var db = new Models.DB.HoteleriaMascotasContext())
                     {
